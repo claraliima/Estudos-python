@@ -1,0 +1,98 @@
+==================================================
+COMANDOS PYTHON E VENV - WINDOWS (PowerShell/CMD)
+==================================================
+
+1. VERIFICAR SE O PYTHON ESTÁ INSTALADO
+--------------------------------------------------
+python --version
+py --version
+
+
+2. CRIAR UM AMBIENTE VIRTUAL (venv)
+--------------------------------------------------
+# Dentro da pasta do seu projeto:
+python -m venv venv
+
+# "venv" é o nome da pasta que será criada.
+# Pode trocar por outro nome, ex: python -m venv .venv
+
+
+3. ATIVAR O AMBIENTE VIRTUAL
+--------------------------------------------------
+# No PowerShell:
+venv\Scripts\Activate.ps1
+
+# No CMD (Prompt de Comando):
+venv\Scripts\activate.bat
+
+# Se aparecer erro de permissão no PowerShell, rode antes:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Quando ativado, o terminal mostra o nome do venv entre parênteses:
+(venv) C:\caminho\do\projeto>
+
+
+4. DESATIVAR O AMBIENTE VIRTUAL
+--------------------------------------------------
+deactivate
+
+
+5. INSTALAR PACOTES (com o venv ativado)
+--------------------------------------------------
+pip install nome_do_pacote
+
+# Exemplo:
+pip install requests flask
+
+
+6. INSTALAR PACOTES A PARTIR DE UM ARQUIVO requirements.txt
+--------------------------------------------------
+pip install -r requirements.txt
+
+
+7. GERAR O ARQUIVO requirements.txt COM OS PACOTES INSTALADOS
+--------------------------------------------------
+pip freeze > requirements.txt
+
+
+8. LISTAR PACOTES INSTALADOS
+--------------------------------------------------
+pip list
+
+
+9. RODAR UMA APLICAÇÃO PYTHON
+--------------------------------------------------
+python nome_do_arquivo.py
+
+# Exemplo:
+python app.py
+
+
+10. ATUALIZAR O PIP
+--------------------------------------------------
+python -m pip install --upgrade pip
+
+
+11. REMOVER UM PACOTE
+--------------------------------------------------
+pip uninstall nome_do_pacote
+
+
+12. EXCLUIR O AMBIENTE VIRTUAL
+--------------------------------------------------
+# Basta apagar a pasta do venv (com ele desativado):
+rmdir /s /q venv
+
+# No PowerShell:
+Remove-Item -Recurse -Force venv
+
+
+==================================================
+FLUXO TÍPICO DE TRABALHO
+==================================================
+1. python -m venv venv
+2. venv\Scripts\Activate.ps1
+3. pip install -r requirements.txt   (ou pip install pacotes)
+4. python app.py
+5. deactivate   (quando terminar)
+==================================================

@@ -5,3 +5,5 @@ clara/
 *.pyc
 
 funcoes.py 
+
+requirements.txt

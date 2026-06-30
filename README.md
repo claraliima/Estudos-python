@@ -4,10 +4,32 @@ Repositório com os estudos de Python desenvolvidos durante o 3º ano do curso t
 
 ## Etapas
 
-- **Etapa 1** — *(em construção)*
+- **Etapa 1** — Atividades envolvendo conceitos iniciais de Python, manipulação de arquivos (CSV, JSON, Excel) e modularização de código
 - **Etapa 2** — Atividades envolvendo POO, Flask, Jinja2 e Sqlite3
 - **Etapa 3** — *(em construção)*
 
+---
+## Etapa 1
+ 
+Nesta etapa, o foco foi revisar conceitos iniciais da linguagem Python e praticar a manipulação de diferentes formatos de arquivos (CSV, JSON e Excel), além de introduzir boas práticas de modularização de código.
+ 
+### Estrutura das pastas
+ 
+#### `conceitos-iniciais/`
+Exercícios de revisão dos fundamentos de Python, organizados por aula (`aula02` a `aula07`).
+ 
+#### `manipulacao_csv/`
+Prática de leitura, escrita e manipulação de arquivos CSV, incluindo um menu interativo (`menu.py`) que organiza as funcionalidades (`funcoes.py`, `dados.py`, `info_arquivo.py`).
+ 
+#### `manipulacao_json/`
+Aplicação para manipulação de dados em formato JSON, com uma base de dados de biblioteca (`biblioteca.json`) e funções de leitura/escrita (`app.py`, `dados.py`, `funcoes.py`).
+ 
+#### `manipulacao_pandas_openpy/`
+Manipulação de dados utilizando as bibliotecas Pandas e OpenPyXL, trabalhando com arquivos Excel e uma pasta de bibliotecas auxiliares (`bibliotecas/`, `dadosopenpyxl.py`, `dadospanda.py`, `funcoes.py`).
+ 
+#### `modularizacao/`
+Exercício de organização de código em módulos separados, com um menu principal (`menu.py`) chamando funções de um arquivo auxiliar (`funcoes.py`).
+ 
 ---
 
 ## Etapa 2
@@ -34,6 +56,8 @@ Criação da página inicial da biblioteca, listando todos os livros cadastrados
 #### `Formulário/`
 Criação de um formulário para inserção de novos livros na aplicação da biblioteca e rota para alteração (edição) de um livro já cadastrado.
 
+#### `Sqlite3/`
+Criação de um módulo de conexão com o SQLite3 para a aplicação, preparado para ser importado e receber queries, seguindo como referência o módulo dados.py.
 ---
 
 ## Observações

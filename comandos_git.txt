@@ -1,0 +1,120 @@
+===========================================
+COMANDOS GIT - GUIA RAPIDO
+===========================================
+
+--- INICIANDO DO ZERO (criar repositorio novo na prova) ---
+
+1) No GitHub (pelo navegador):
+   - Clicar em "+" > "New repository"
+   - Dar um nome ao repositorio
+   - NAO marcar "Add a README"
+   - Deixar .gitignore como "None"
+   - Criar o repositorio (fica vazio)
+   - Copiar a URL dele (ex: https://github.com/usuario/nome-repo.git)
+
+2) No terminal, dentro da pasta do projeto:
+
+cd CAMINHO\DA\PASTA
+# Entra na pasta onde estao os arquivos do projeto
+
+git init
+# Inicializa um repositorio Git novo nessa pasta (cria a pasta oculta .git)
+
+git config user.name "seu-nome"
+git config user.email "seu-email@exemplo.com"
+# Define o autor dos commits SO NESSE repositorio (sem --global).
+# Util se o computador da prova nao for o seu, pra nao misturar com outra conta.
+
+# Criar o arquivo .gitignore ANTES do primeiro add, se necessario
+# (ex: ignorar pasta do venv, __pycache__, etc)
+
+git add .
+# Adiciona todos os arquivos (exceto os do .gitignore) ao staging
+
+git commit -m "primeiro commit"
+# Salva o primeiro snapshot do projeto
+
+git branch -M main
+# Renomeia a branch atual para "main" (padrao usado pelo GitHub)
+
+git remote add origin https://github.com/usuario/nome-repo.git
+# Conecta o repositorio local ao repositorio remoto criado no GitHub
+# (trocar a URL pela URL real copiada no passo 1)
+
+git push -u origin main
+# Envia os arquivos pro GitHub. O -u associa a branch local com a remota,
+# entao da proxima vez basta usar "git push"
+
+
+--- ANTES DE COMECAR (rodar so 1x por pasta nova) ---
+
+dir -Force NOME_DA_PASTA
+# Verifica se a pasta tem um .git escondido (acontece quando voce baixa/copia
+# codigo de outro repositorio). Se aparecer .git, apague antes de continuar:
+# Remove-Item -Recurse -Force "NOME_DA_PASTA\.git"
+
+
+--- FLUXO NORMAL PARA SUBIR ALGO NOVO ---
+
+cd C:\Estudos-python
+# Entra na pasta raiz do projeto (onde fica o .git principal)
+
+git status
+# Mostra o que mudou: arquivos novos, modificados ou removidos.
+# Sempre rodar antes do add, pra conferir o que vai ser enviado.
+
+git add .
+# Adiciona TODOS os arquivos novos/modificados ao staging (preparando pro commit).
+# Arquivos do .gitignore (como venv) sao ignorados automaticamente.
+#
+# Alternativa mais segura, se quiser subir so uma pasta especifica:
+# git add etapa2/NomeDaPasta
+
+git commit -m "mensagem clara sobre o que foi feito"
+# Salva um "snapshot" das mudancas com uma mensagem explicando o que foi adicionado/alterado.
+# Exemplo: git commit -m "adiciona atividade Flask04"
+
+git push
+# Envia os commits salvos localmente para o GitHub.
+
+
+--- COMANDOS UTEIS PARA CONFERIR ---
+
+git log --oneline
+# Mostra o historico de commits de forma resumida (1 linha por commit).
+
+git log --format="%an <%ae>"
+# Mostra quem (nome e email) fez cada commit. Util pra checar se o autor
+# esta correto.
+
+git diff
+# Mostra exatamente o que foi alterado nos arquivos (linha por linha),
+# antes de dar o add.
+
+
+--- CONFIGURACAO (rodar so 1x por computador) ---
+
+git config --global user.name "seu-nome"
+git config --global user.email "seu-email@exemplo.com"
+# Define quem aparece como autor dos commits feitos nesse computador.
+
+
+--- SE ALGO DER ERRADO ---
+
+git rm -r --cached NOME_DA_PASTA
+# Remove uma pasta do controle do Git (sem apagar do disco).
+# Usar quando uma pasta foi commitada por engano antes de entrar no .gitignore.
+
+git commit --amend --no-edit
+# Corrige o ULTIMO commit (ex: autor errado) sem mudar a mensagem.
+# So usar antes do push, ou seguido de push --force se ja tiver subido.
+
+===========================================
+FLUXO RESUMIDO (o que usar na maioria das vezes)
+===========================================
+
+cd C:\Estudos-python
+git status
+git add .
+git commit -m "mensagem do que foi feito"
+git push

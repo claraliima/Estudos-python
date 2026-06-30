@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "Banco Imobiliário",
+        "tipo": "Tabuleiro",
+        "ano_lancamento": 1935,
+        "classificacao": 8
+    },
+    {
+        "nome": "Clash Royale",
+        "tipo": "Mobile",
+        "ano_lancamento": 2016,
+        "classificacao": 12
+    }
+]

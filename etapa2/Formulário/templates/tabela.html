@@ -1,0 +1,46 @@
+{% extends "biblioteca.html" %}
+
+{% block titulo %}
+<title>Atividade JINJA2</title>
+{% endblock titulo %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            {% if biblioteca %}
+                {% for key in biblioteca[0].keys() %}
+                    {% if key == 'isbn' %}
+                        <th>{{ key | upper }}</th>
+                    {% else %}
+                        <th>{{ key | capitalize | replace('_', ' ') }}</th>
+                    {% endif %}
+                {% endfor %}
+                <th>Ações</th>
+            {% endif %}
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for livro in biblioteca %}
+        <tr>
+            <td>{{ livro['isbn'] }}</td>
+            <td>{{ livro.titulo }}</td>
+            <td>{{ livro.autor }}</td>
+            <td>{{ livro.genero }}</td>
+            <td>{{ livro.ano_publicacao }}</td>
+            <td>{{ livro.editora }}</td>
+            <td>{{ livro.paginas }}</td>
+            <td>{{ livro['status'] }}</td>
+            <td>{{ livro['localizacao'] }}</td>
+            <td>
+                <form action="/biblioteca/atualizar" method="GET" style="display:inline;">
+                    <input type="hidden" name="isbn" value="{{ livro.isbn }}">
+                    <button type="submit" class="btn btn-warning">Alteração</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

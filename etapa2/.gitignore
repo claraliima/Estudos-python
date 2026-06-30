@@ -1,0 +1,7 @@
+clara/
+**/clara/
+
+**/__pycache__/
+*.pyc
+
+funcoes.py 

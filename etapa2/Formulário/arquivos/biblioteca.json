@@ -1,0 +1,68 @@
+[
+    {
+        "isbn": "978-8535914849",
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "genero": "Distopia",
+        "ano_publicacao": "1949",
+        "editora": "Companhia das Letras",
+        "paginas": "420",
+        "status": "disponivel",
+        "localizacao": "Estante A1, Prateleira 2"
+    },
+    {
+        "ano_publicacao": 1896,
+        "autor": "Charles Sheddon",
+        "editora": "Companhia das Letras",
+        "genero": "Romance",
+        "isbn": "978-6559882403",
+        "localizacao": "Estante A1, Prateleira 2",
+        "paginas": 416,
+        "status": "disponivel",
+        "titulo": "Em Seus Passos que Faria Jesus?"
+    },
+    {
+        "ano_publicacao": 1945,
+        "autor": "George Orwell",
+        "editora": "Companhia das Letras",
+        "genero": "Distopia",
+        "isbn": "978-8535909555",
+        "localizacao": "Estante A1, Prateleira 2",
+        "paginas": 416,
+        "status": "disponivel",
+        "titulo": "A revolução dos Bichos"
+    },
+    {
+        "ano_publicacao": 1945,
+        "autor": "George Orwell",
+        "editora": "Companhia das Letras",
+        "genero": "Distopia",
+        "isbn": "978-85359095XX",
+        "localizacao": "Estante A1, Prateleira 2",
+        "paginas": 416,
+        "status": "disponivel",
+        "titulo": "A revolução dos Bichos"
+    },
+    {
+        "isbn": "978-65598824XY",
+        "titulo": "Em Seus Passos que Faria Jesus?",
+        "autor": "Charles Sheddon",
+        "genero": "Romance",
+        "ano_publicacao": "1896",
+        "editora": "Companhia das Letras",
+        "paginas": "416",
+        "status": "disponivel",
+        "localizacao": "Estante A1, Prateleira 2"
+    },
+    {
+        "isbn": "978-655988XXX",
+        "titulo": "qualquer coisa",
+        "autor": "Qualquer Um",
+        "genero": "Qualquer",
+        "ano_publicacao": "2026",
+        "editora": "Quaisquer",
+        "paginas": "100",
+        "status": "disponivel",
+        "localizacao": "qualquer lugar"
+    }
+]

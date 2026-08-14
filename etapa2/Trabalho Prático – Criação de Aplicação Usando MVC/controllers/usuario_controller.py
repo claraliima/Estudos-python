@@ -1,10 +1,16 @@
 from services import UsuarioService
+from flask import jsonify, request
 
-class UsuarioController:
-    
-    @staticmethod
-    def validar_campos_obrigatorios(UsuarioController):
+def validar_campos_obrigatorios(UsuarioController):
+    if request.method == "POST":
         if not UsuarioController.nome:
-            raise ValueError("Nome é obrigatório.")
+            return jsonify({
+                "O campo nome deve ser preenchido" 
+            })
         if not UsuarioController.email:
-            raise ValueError("E-mail é obrigatório.")
+            return jsonify({
+                "O campo email deve ser preenchido" 
+            })
+        
+class UsuarioController:
+    pass

@@ -1,5 +1,7 @@
 clara/
 **/clara/
+venv/
+**venv/
 
 **/__pycache__/
 *.pyc

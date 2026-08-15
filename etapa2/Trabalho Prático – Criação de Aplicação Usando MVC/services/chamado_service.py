@@ -7,10 +7,7 @@ class ChamadoService:
         if not usuario_id:
             raise ValueError("Chamado deve estar vinculado a um usuário.")
         return True
-    
-    def iniciar_atendimento(id):
-        ChamadoRepository.altera_status_atendimento(id)
-
+    @staticmethod
     def alterar_status(id):
         chamado = ChamadoRepository.buscar_por_id(id)
         if str(chamado.status).lower() == "aberto":
@@ -21,9 +18,24 @@ class ChamadoService:
             return 204
         else:
             return 404
-
+    @staticmethod
     def verificar_usuario(id):
         if ChamadoRepository.buscar_por_id(id):
             return 200
         else: 
             return 404
+        
+    @staticmethod
+    def listar_chamados_abertos(id):
+        return ChamadoRepository.listar_chamados_abertos(id)
+    
+    @staticmethod
+    def listar_chamados_prioridade():
+        return ChamadoRepository.listar_prioridade_alta()
+    
+    @staticmethod
+    def deletar_chamado(id):
+        if id == ChamadoRepository.buscar_por_id(id):
+            ChamadoRepository.deletar(id)
+            return 200
+        return 404

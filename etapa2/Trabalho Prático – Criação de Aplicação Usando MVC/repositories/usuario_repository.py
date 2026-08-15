@@ -17,7 +17,7 @@ class UsuarioRepository:
         db.session.commit()
 
     @staticmethod
-    def deletar(Usuario):
+    def deletar(id):
         db.session.delete(Usuario)
         db.session.commit()
 
@@ -34,7 +34,10 @@ class UsuarioRepository:
     def listar_chamados_usuario(id):
         return Chamado.query.filter(
             Chamado.usuario_id == id,
-            Chamado.prioridade == "Alta",
-            Chamado.status != "Encerrado"
         ).all()
+        
+    @staticmethod
+    def pesquisa_email(email):
+        email = Usuario.query.filter_by(email=email).first()
+        return email
             
